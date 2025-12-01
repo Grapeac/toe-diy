@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DIY Alignment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>DIY Alignment</h1>
+        </header>
+
+        <main id="main-content">
+            <!-- Garage Section -->
+            <section id="garage" class="active-section">
+                <div class="car-visual">
+                    <div class="chassis">
+                        <div class="wheel front-left" id="wheel-fl"></div>
+                        <div class="wheel front-right" id="wheel-fr"></div>
+                        <div class="wheel rear-left" id="wheel-rl"></div>
+                        <div class="wheel rear-right" id="wheel-rr"></div>
+                        <div class="car-body"></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="axle-group">
+                        <h2>Front Axle</h2>
+                        <div class="input-row">
+                            <label>前側 (mm)</label>
+                            <input type="number" id="front-fore" placeholder="0">
+                        </div>
+                        <div class="input-row">
+                            <label>後側 (mm)</label>
+                            <input type="number" id="front-aft" placeholder="0">
+                        </div>
+                        <div class="result-display">
+                            <span>Toe: </span><span id="front-toe-result">0.00°</span>
+                        </div>
+                    </div>
+
+                    <div class="axle-group">
+                        <h2>Rear Axle</h2>
+                        <div class="input-row">
+                            <label>前側 (mm)</label>
+                            <input type="number" id="rear-fore" placeholder="0">
+                        </div>
+                        <div class="input-row">
+                            <label>後側 (mm)</label>
+                            <input type="number" id="rear-aft" placeholder="0">
+                        </div>
+                        <div class="result-display">
+                            <span>Toe: </span><span id="rear-toe-result">0.00°</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings">
+                <h2>Settings</h2>
+                <div class="setting-group">
+                    <label for="wheel-select">Wheel Inch</label>
+                    <select id="wheel-select">
+                        <option value="">Select Inch</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="width-select">Tire Width</label>
+                    <select id="width-select" disabled>
+                        <option value="">Select Width</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="ratio-select">Aspect Ratio</label>
+                    <select id="ratio-select" disabled>
+                        <option value="">Select Ratio</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>Current Diameter</label>
+                    <div id="current-diameter" class="value-display">--- mm</div>
+                </div>
+            </section>
+
+            <!-- Other Section -->
+            <section id="other">
+                <h2>Other</h2>
+                <button id="clear-data-btn" class="danger-btn">Clear All Data</button>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-target="garage">
+                <span class="icon">🚗</span>
+                <span>Garage</span>
+            </button>
+            <button class="nav-btn" data-target="settings">
+                <span class="icon">⚙️</span>
+                <span>Settings</span>
+            </button>
+            <button class="nav-btn" data-target="other">
+                <span class="icon">⋯</span>
+                <span>Other</span>
+            </button>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
